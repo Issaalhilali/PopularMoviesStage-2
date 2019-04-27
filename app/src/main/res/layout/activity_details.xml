@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backround"
+    tools:context=".DetailsActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailsActivity">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/tilte"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ImageView
+            android:id="@+id/iv_backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginBottom="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/movie_icon_width"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_backdrop"
+            app:layout_constraintStart_toStartOf="@+id/iv_backdrop" />
+
+        <TextView
+            android:id="@+id/tv_header_rating"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="35dp"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding"
+            android:text="@string/user_rating"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <RatingBar
+            android:id="@+id/rbv_user_rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="10"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            app:layout_constraintTop_toBottomOf="@id/tv_header_rating"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_header_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding"
+            android:text="@string/release_date"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/rbv_user_rating" />
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_date"
+            tools:text="10/10/2010" />
+
+        <TextView
+            android:id="@+id/tv_header_synopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding"
+            android:text="@string/synopsis"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release_date" />
+
+        <TextView
+            android:id="@+id/tv_synopsis"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingBottom="@dimen/padding"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_synopsis" />
+
+        <TextView
+            android:id="@+id/tv_header_trailers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding"
+            android:text="@string/trailers"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_synopsis" />
+
+        <TextView
+            android:id="@+id/tv_trailers"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_trailers" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_trailers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingBottom="@dimen/padding"
+            app:layout_constraintTop_toBottomOf="@+id/tv_trailers"></android.support.v7.widget.RecyclerView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorLine"
+            app:layout_constraintTop_toBottomOf="@id/rv_trailers"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_header_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding"
+            android:text="@string/reviews"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/rv_trailers" />
+
+        <TextView
+            android:id="@+id/tv_reviews"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding"
+            android:paddingLeft="@dimen/padding"
+            android:paddingBottom="@dimen/padding"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_reviews" />
+
+        <ImageView
+            android:id="@+id/iv_favButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingTop="@dimen/padding"
+            android:paddingEnd="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_backdrop"
+            app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
